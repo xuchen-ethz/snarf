@@ -1,5 +1,0 @@
-datamodule:
-  _target_: lib.dataset.jointlim.JointLimDataModule
-  dataset_path: ./data/MPILimits_processed
-  subject: ${subject}
-  num_workers: 10

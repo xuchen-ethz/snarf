@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Animating non-rigid neural implicit shapes.">
+  <meta name="keywords" content="SNARF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SNARF: Differentiable Forward Skinning for Animating Non-Rigid Neural Implicit Shapes</title>
+
+
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">SNARF: Differentiable Forward Skinning for Animating Non-Rigid Neural Implicit Shapes</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://ait.ethz.ch/people/xu/">Xu Chen</a><sup>1,3</sup>,</span>
+            <span class="author-block">
+              <a href="https://ait.ethz.ch/people/zhengyuf/">Yufeng Zheng</a><sup>1,3</sup>,</span>
+            <span class="author-block">
+              <a href="https://ps.is.mpg.de/~black">Michael J. Black</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://ait.ethz.ch/people/hilliges/">Otmar Hilliges</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="http://www.cvlibs.net/">Andreas Geiger</a><sup>2,3</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>ETH Zurich,</span>
+            <span class="author-block"><sup>2</sup>University of Tubingen,</span>
+            <br>
+            <span class="author-block"><sup>3</sup>Max Planck Institute for Intelligent Systems, Tubingen
+            </span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2104.03953.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=Q99t36qGZUU"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/xuchen-ethz/snarf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop height="100%">
+        <source src="https://ait.ethz.ch/projects/2021/snarf/downloads/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        SNARF learns implicit shape and animation from deformed observations.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop height="100%">
+            <source src="https://ait.ethz.ch/projects/2021/snarf/downloads/sample1.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop height="100%">
+            <source src="https://ait.ethz.ch/projects/2021/snarf/downloads/sample2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop height="100%">
+            <source src="https://ait.ethz.ch/projects/2021/snarf/downloads/sample3.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop height="100%">
+            <source src="https://ait.ethz.ch/projects/2021/snarf/downloads/sample4.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop height="100%">
+            <source src="https://ait.ethz.ch/projects/2021/snarf/downloads/sample5.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop height="100%">
+            <source src="https://ait.ethz.ch/projects/2021/snarf/downloads/sample6.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Neural implicit surface representations have emerged as a promising paradigm to capture 3D shapes in a continuous and resolution-independent manner. However, adapting them to articulated shapes is non-trivial. Existing approaches learn a backward warp field that maps deformed to canonical points. However, this is problematic since the backward warp field is pose dependent and thus requires large amounts of data to learn. 
+          </p>
+          <p>
+          To address this, we introduce SNARF, which combines the advantages of linear blend skinning (LBS) for polygonal meshes with those of neural implicit surfaces by learning a forward deformation field without direct supervision. This deformation field is defined in canonical, pose-independent, space, enabling generalization to unseen poses. Learning the deformation field from posed meshes alone is challenging since the correspondences of deformed points are defined implicitly and may not be unique under changes of topology. We propose a forward skinning model that finds all canonical correspondences of any deformed point using iterative root finding. We derive analytical gradients via implicit differentiation, enabling end-to-end training from 3D meshes with bone transformations. 
+          </p>
+          <p>
+          Compared to state-of-the-art neural implicit representations, our approach generalizes better to unseen poses while preserving accuracy. We demonstrate our method in challenging scenarios on (clothed) 3D humans in diverse and unseen poses.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/Q99t36qGZUU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title">Backward vs. Forward</h2>
+
+        <!-- Demo Text-->
+        <!-- Backward. -->
+        <div class="columns is-centered">
+          <div class="column">
+            <div class="content">
+              <p>
+                <font size="+2">Backward</font> warping/skinning has been used to model non-rigid implicit shapes. It maps poitns from deformed space to canonical space. The backward skinning weights field is defined in deformed space, therefore it's pose-dependent and does not generalize to unseen poses.
+              </p>
+            </div>
+          </div>
+          <!--/ Backward. -->
+    
+          <!-- Forward. -->
+          <div class="column">
+            <div class="columns is-centered">
+              <div class="column content">
+                <p>
+                  We propose to use <font size="+2">Forward</font> skinning for animating implicit shapes. It maps points from canonical space to deformed space. The forward skinning weights field is defined in the canonical space. Thus, forward skinning naturally generalizes to unseen poses. 
+                </p>
+              </div>
+    
+            </div>
+          </div>
+        </div>
+        <!-- Forward. -->
+
+        <!-- Demo Vis-->
+        <!-- Backward. -->
+        <div class="columns is-centered">
+          <div class="column">
+            <div class="content">
+              <img src="assets/demo_backward.gif"  height="250" class="center"/>
+              <img src="assets/result_backward.gif"  height="250" class="center"/>
+            </div>
+          </div>
+          <!--/ Backward. -->
+    
+          <!-- Forward. -->
+          <div class="column">
+            <div class="columns is-centered">
+              <div class="column content">
+                <img src="assets/demo_forward.gif"  height="250" class="center"/>
+                <img src="assets/result_forward.gif"  height="250" class="center"/>
+              </div>
+    
+            </div>
+          </div>
+        </div>
+        <!-- Forward. -->
+
+      </div>
+    </div>
+</section>
+
+
+<section class="section" id="method">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Method Overview</h2>
+    <img src="assets/pipeline.png"  height="250" class="center"/>
+    <p>
+      To genreate deformed shape or to train with deformed observations, we need to determine the canonical correspondence of any given deformed point. This is trivial for backward skinning, but not straightforward for forward skinning. The core of our method is to find the canonical correspondence of any deformed point using forward skinning weights. We use iterative root finding algorithm with multiple initializations to numerically find all corrpondences, and then aggregate their occupancy probabilities using max operator as the occupancy of the deformed point. Finnally, we derive analytical gradients using the implicit differentiation theorem, so that the whole pipeline is end-to-end differentiable and thus can be trained with deformed observations directly.
+    </p>
+  </div>
+</section>
+
+<section class="section" id="result">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Comparison</h2>
+
+    <p>
+      We train our method using meshes in various poses and ask the model to generate novel poses during inference time:
+    </p>
+    <video poster="" id="chair-tp" autoplay controls muted loop height="100%">
+      <source src="assets/result.mp4", type="video/mp4">
+    </video>
+    <p>
+      As shown, our method generalizes to these challenging and unseen poses. In comparison, backward skinning produces distorted shapes for unseen poses. The other baseline, NASA, models human body as a composition of multiple parts and suffers from discontinuous artifacts at joints.
+    </p>
+
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{chen2021snarf,
+      title={SNARF: Differentiable Forward Skinning for Animating Non-Rigid Neural Implicit Shapes},
+      author={Chen, Xu and Zheng, Yufeng and Black, Michael J and Hilliges, Otmar and Geiger, Andreas},
+      booktitle={International Conference on Computer Vision (ICCV)},
+      year={2021}
+    }</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://arxiv.org/pdf/2104.03953.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This webpage is built with the template from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>. We sincerely thank <a href="https://keunhong.com/">Keunhong Park</a> for developing and open-sourcing this template.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
