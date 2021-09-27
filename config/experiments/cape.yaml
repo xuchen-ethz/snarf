@@ -1,0 +1,8 @@
+expname: cape
+trainer:
+  max_steps: 100000
+model:
+  network:
+    multires: 4
+    cond_layer: [0]
+    dim_cond_embed: -1

@@ -1,0 +1,150 @@
+'50002':
+  test:
+  - chicken_wings
+  train:
+  - hips
+  - jiggle_on_toes
+  - jumping_jacks
+  - knees
+  - light_hopping_loose
+  - light_hopping_stiff
+  - one_leg_jump
+  - one_leg_loose
+  - punching
+  val:
+  - chicken_wings
+'50004':
+  test:
+  - hips
+  train:
+  - chicken_wings
+  - jiggle_on_toes
+  - jumping_jacks
+  - knees
+  - light_hopping_loose
+  - light_hopping_stiff
+  - one_leg_jump
+  - one_leg_loose
+  - punching
+  val:
+  - hips
+'50007':
+  test:
+  - jiggle_on_toes
+  train:
+  - chicken_wings
+  - jumping_jacks
+  - knees
+  - light_hopping_loose
+  - light_hopping_stiff
+  - one_leg_jump
+  - one_leg_loose
+  - punching
+  - running_on_spot
+  val:
+  - jiggle_on_toes
+'50009':
+  test:
+  - jumping_jacks
+  train:
+  - chicken_wings
+  - hips
+  - jiggle_on_toes
+  - light_hopping_loose
+  - light_hopping_stiff
+  - one_leg_jump
+  - one_leg_loose
+  - punching
+  - running_on_spot
+  val:
+  - jumping_jacks
+'50020':
+  test:
+  - knees
+  train:
+  - chicken_wings
+  - hips
+  - jiggle_on_toes
+  - light_hopping_loose
+  - light_hopping_stiff
+  - one_leg_jump
+  - one_leg_loose
+  - punching
+  - running_on_spot
+  val:
+  - knees
+'50021':
+  test:
+  - light_hopping_stiff
+  train:
+  - chicken_wings
+  - hips
+  - knees
+  - one_leg_jump
+  - one_leg_loose
+  - punching
+  - running_on_spot
+  - shake_arms
+  - shake_hips
+  val:
+  - light_hopping_stiff
+'50022':
+  test:
+  - light_hopping_loose
+  train:
+  - hips
+  - jiggle_on_toes
+  - jumping_jacks
+  - knees
+  - light_hopping_stiff
+  - one_leg_jump
+  - one_leg_loose
+  - punching
+  - running_on_spot
+  val:
+  - light_hopping_loose
+'50025':
+  test:
+  - one_leg_jump
+  train:
+  - chicken_wings
+  - hips
+  - jiggle_on_toes
+  - knees
+  - light_hopping_loose
+  - light_hopping_stiff
+  - one_leg_loose
+  - punching
+  - running_on_spot
+  val:
+  - one_leg_jump
+'50026':
+  test:
+  - one_leg_loose
+  train:
+  - chicken_wings
+  - hips
+  - jiggle_on_toes
+  - jumping_jacks
+  - knees
+  - light_hopping_loose
+  - light_hopping_stiff
+  - one_leg_jump
+  - punching
+  val:
+  - one_leg_loose
+'50027':
+  test:
+  - punching
+  train:
+  - hips
+  - jiggle_on_toes
+  - jumping_jacks
+  - knees
+  - light_hopping_loose
+  - light_hopping_stiff
+  - one_leg_jump
+  - one_leg_loose
+  - running_on_spot
+  val:
+  - punching

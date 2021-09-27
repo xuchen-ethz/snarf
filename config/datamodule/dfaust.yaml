@@ -1,0 +1,8 @@
+datamodule:
+  _target_: lib.dataset.dfaust.DFaustDataModule
+  dataset_path: ./data/DFaust_processed
+  subject: ${subject}
+  num_workers: 10
+  batch_size: 8
+  points_per_frame: 2000
+

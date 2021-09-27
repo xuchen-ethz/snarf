@@ -1,0 +1,28 @@
+name: snarf
+channels:
+  - anaconda
+  - conda-forge
+  - pytorch
+  - pytorch3d
+  - defaults
+dependencies:
+  - python=3.7
+  - pytorch=1.7.0
+  - torchvision=0.8.0
+  - cudatoolkit=11.0
+  - iopath
+  - fvcore
+  - pytorch3d
+  - pip
+  - pip:
+    - chumpy
+    - scikit-image
+    - imageio-ffmpeg
+    - trimesh
+    - wandb
+    - tqdm
+    - pytorch-lightning==1.3.3
+    - opencv-python==4.5.2.54
+    - hydra-core==1.0.6
+    - usd-core==20.11 # for kaolin
+    - Cython==0.29.20 # for kaolin
