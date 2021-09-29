@@ -1,5 +1,5 @@
 # SNARF: Differentiable Forward Skinning for Animating Non-rigid Neural Implicit Shapes
-## [Paper](https://arxiv.org/pdf/2104.03953.pdf) | [Supp](https://bit.ly/3t1Tk6F) | [Video](https://youtu.be/rCEpFTKjFHE) | [Project Page](xuchen-ethz.github.io/snarf/)
+## [Paper](https://arxiv.org/pdf/2104.03953.pdf) | [Supp](https://bit.ly/3t1Tk6F) | [Video](https://youtu.be/rCEpFTKjFHE) | [Project Page](https://xuchen-ethz.github.io/snarf) | Blog ([AIT](https://eth-ait.medium.com/animate-implicit-shapes-with-forward-skinning-c7ebbf355694)，[AVG](https://autonomousvision.github.io/snarf/))
 
 
 <img src="assets/1.gif" width="250" height="250"/> <img src="assets/2.gif" width="250" height="250"/> <img src="assets/3.gif" width="250" height="250"/>
