@@ -31,7 +31,7 @@ python setup.py install
 ```
 
 
-Download [SMPL models](https://smpl.is.tue.mpg.de/downloads) (1.0.0 for Python 2.7 (10 shape PCs)) and move them to the corresponding places:
+Download [SMPL models](https://smpl.is.tue.mpg.de) (1.0.0 for Python 2.7 (10 shape PCs)) and move them to the corresponding places:
 ```
 mkdir lib/smpl/smpl_model/
 mv /path/to/smpl/models/basicModel_f_lbs_10_207_0_v1.0.0.pkl lib/smpl/smpl_model/SMPL_FEMALE.pkl
