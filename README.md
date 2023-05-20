@@ -6,6 +6,8 @@
 
 Official code release for ICCV 2021 paper [*SNARF: Differentiable Forward Skinning for Animating Non-rigid Neural Implicit Shapes*](https://arxiv.org/pdf/2104.03953.pdf). We propose a novel forward skinning module to animate neural implicit shapes with good generalization to unseen poses.
 
+**Update:** we have released an improved version, FastSNARF, which is 150x faster than SNARF. Check it out [here](https://github.com/xuchen-ethz/fast-snarf).
+
 If you find our code or paper useful, please cite as
 ```
 @inproceedings{chen2021snarf,
